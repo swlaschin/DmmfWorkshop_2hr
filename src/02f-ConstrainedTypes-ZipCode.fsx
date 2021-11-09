@@ -1,0 +1,52 @@
+﻿open System
+
+//----------------------------------------------------------
+//  Create a `ZipCode`  type that can only contain 5 digit chars
+//----------------------------------------------------------
+
+module ConstrainedTypes =
+
+    /// Must be 5 chars, all digits
+    type ZipCode = private ZipCode of string
+
+    module ZipCode =
+
+        /// Public constructor
+        let create (s:string) =
+
+            // local helper function
+            let is5Digits (s:string) =
+                let isAllDigits = s |> Seq.forall Char.IsDigit
+                (s.Length = 5) && isAllDigits
+
+            // construct the ZipCode
+            if is5Digits s then
+                Some (ZipCode s)
+            else
+                None
+
+        /// Return the value
+        let value (ZipCode s) = s
+
+// --------------------------------
+// test ZipCode
+// --------------------------------
+
+open ConstrainedTypes
+
+let printWrappedValue zipCodeOpt =
+    match zipCodeOpt with
+    | Some zipCode ->
+        let inner = ZipCode.value zipCode
+        printfn "The ZipCode is valid and the wrapped value is %s" inner
+    | None ->
+        printfn "The value is None"
+
+let zip1Option = ZipCode.create "12345"
+printWrappedValue zip1Option
+
+let zip2Option = ZipCode.create "abc"
+printWrappedValue zip2Option
+
+let zip3Option = ZipCode.create "123456"
+printWrappedValue zip3Option

@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="00-HelloWorld.fsx" />
+    <None Include="fsharp-basic-syntax.fsx" />
+    <None Include="01-Options.fsx" />
+    <None Include="02a-ExamplesFromSlides.fsx" />
+    <None Include="02b-ConstrainedTypes-EmailAddress.fsx" />
+    <None Include="02c-ConstrainedTypes-EmailAddress-OO.fsx" />
+    <None Include="02d-ConstrainedTypes-String10.fsx" />
+    <None Include="02e-ConstrainedTypes-OrderLineQty.fsx" />
+    <None Include="02f-ConstrainedTypes-ZipCode.fsx" />
+    <None Include="02g-ConstrainedTypes_FrequentQuestions.fsx" />
+    <None Include="02h-ConstrainedTypes-NonZeroInteger.fsx" />
+    <None Include="03a-ExamplesFromSlides.fsx" />
+    <None Include="03b-Refactoring flags.fsx" />
+    <None Include="04a-ExamplesFromSlides.fsx" />
+    <None Include="04b-DesignExamples-CardGame.fsx" />
+    <None Include="04c-DesignExamples-Contact.fsx" />
+    <None Include="04d-DesignExamples-Payments.fsx" />
+    <None Include="04e-DesignExamples-YourOwnDomain.fsx" />
+    <None Include="05a-Exercise-ShoppingCartApi.fsx" />
+    <None Include="ShoppingCartApiImplementation.fsx" />
+    <None Include="05b-ShoppingCartClient.fsx" />
+    <None Include="06a-TotalFunctions.fsx" />
+    <None Include="06b-TotalFunctions-Examples.fsx" />
+    <None Include="06c-NonEmptyList.fsx" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="4.5.2" />
+  </ItemGroup>
+
+</Project>
